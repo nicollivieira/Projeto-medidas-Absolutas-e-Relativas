@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidas Absolutas e Relativas - Margin e Padding</title>
+    <link rel="stylesheet" href="../CSS.GRAZI/medidas.css">
+</head>
+<body>
+
+    <header id="topo">
+        <h1> Medidas Absolutas e Relativas</h1>
+        <p>Aprendendo Margin, Padding e Unidades de Medida em CSS</p>
+    </header>
+
+    <div class="container">
+
+        <!-- ===== SEÇÃO 1: MEDIDAS ABSOLUTAS ===== -->
+        <section class="section" id="medidas-absolutas">
+            <h2>1. Medidas Absolutas (PX - Pixels)</h2>
+            <p>Medidas <span class="highlight">absolutas</span> têm tamanho fixo e não mudam com o redimensionamento da tela. A unidade mais comum é o <strong>pixel (px)</strong>.</p>
+
+            <div class="dica">
+                <strong> Dica:</strong> Use medidas absolutas quando precisa de precisão e tamanhos fixos que não devem variar.
+            </div>
+
+            <h3>Exemplos com Pixels:</h3>
+            <div class="demo-absolute">
+                <div class="box-absolute-pequeno">100px × 100px</div>
+                <div class="box-absolute-medio">200px × 120px</div>
+                <div class="box-absolute-grande">300px × 150px</div>
+            </div>
+
+            <div class="code-example">
+                <pre>.box-pequeno {
+    width: 100px;
+    height: 100px;
+}</pre>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO 2: MEDIDAS RELATIVAS ===== -->
+        <section class="section" id="medidas-relativas">
+            <h2>2. Medidas Relativas (%, EM, REM)</h2>
+            <p>Medidas <span class="highlight">relativas</span> se adaptam ao tamanho do container ou da tela. São mais flexíveis para design responsivo.</p>
+
+            <h3>A) Percentual (%)</h3>
+            <p>O percentual é relativo ao tamanho do elemento pai.</p>
+
+            <div class="demo-relative">
+                <div class="box-relative-25">25% da largura</div>
+                <div class="box-relative-50">50% da largura</div>
+                <div class="box-relative-75">75% da largura</div>
+                <div class="box-relative-100">100% da largura</div>
+            </div>
+
+            <div class="code-example">
+                <pre>.box-25 {
+    width: 25%;
+    height: 80px;
+}</pre>
+            </div>
+
+            <div class="dica">
+                <strong>💡 Dica:</strong> Use percentuais para layouts fluidos que se adaptam ao tamanho da tela.
+            </div>
+
+            <h3>B) Unidades EM e REM</h3>
+            <p><strong>EM:</strong> Relativo ao tamanho da fonte do elemento pai.</p>
+            <p><strong>REM:</strong> Relativo ao tamanho da fonte do elemento raiz (html).</p>
+
+            <div class="demo-em-rem">
+                <div class="box-em">1.5em de padding</div>
+                <div class="box-rem">1.5rem de padding</div>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Unidade</th>
+                    <th>Descrição</th>
+                    <th>Quando Usar</th>
+                </tr>
+                <tr>
+                    <td><strong>px</strong></td>
+                    <td>Pixels - Absoluto</td>
+                    <td>Bordas, sombras, elementos que não mudam</td>
+                </tr>
+                <tr>
+                    <td><strong>%</strong></td>
+                    <td>Percentual - Relativo ao pai</td>
+                    <td>Layouts responsivos, larguras</td>
+                </tr>
+                <tr>
+                    <td><strong>em</strong></td>
+                    <td>Relativo à fonte do pai</td>
+                    <td>Espaçamentos dentro de componentes</td>
+                </tr>
+                <tr>
+                    <td><strong>rem</strong></td>
+                    <td>Relativo à fonte raiz (html)</td>
+                    <td>Design escalável e consistente</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- ===== SEÇÃO 3: MARGIN (ESPAÇO EXTERNO) ===== -->
+        <section class="section" id="margin">
+            <h2>3. Margin (Espaço Externo)</h2>
+            <p><span class="highlight">Margin</span> é o espaço <strong>fora</strong> do elemento. É a distância entre o elemento e seus vizinhos.</p>
+
+            <h3>Demonstração de Diferentes Margins:</h3>
+            <div class="demo-margin">
+                <div class="box-margin-small">margin: 10px</div>
+                <div class="box-margin-medium">margin: 20px</div>
+                <div class="box-margin-large">margin: 40px</div>
+            </div>
+
+            <div class="code-example">
+                <pre>.box {
+    margin: 20px;           /* Todos os lados */
+    margin: 10px 20px;      /* Vertical | Horizontal */
+    margin: 10px 20px 30px 40px;  /* Top | Right | Bottom | Left */
+}</pre>
+            </div>
+
+            <div class="atencao">
+                <strong>⚠️ Atenção:</strong> Margens de elementos adjacentes podem se "colapsar" (fundir), resultando em uma única margem maior.
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO 4: PADDING (ESPAÇO INTERNO) ===== -->
+        <section class="section" id="padding">
+            <h2>4. Padding (Espaço Interno)</h2>
+            <p><span class="highlight">Padding</span> é o espaço <strong>dentro</strong> do elemento, entre o conteúdo e a borda.</p>
+
+            <h3>Demonstração de Diferentes Paddings:</h3>
+            <div class="demo-padding">
+                <div class="box-padding-small">padding: 5px</div>
+                <div class="box-padding-medium">padding: 20px</div>
+                <div class="box-padding-large">padding: 40px</div>
+            </div>
+
+            <div class="code-example">
+                <pre>.box {
+    padding: 20px;           /* Todos os lados */
+    padding: 10px 20px;      /* Vertical | Horizontal */
+    padding: 10px 20px 30px 40px;  /* Top | Right | Bottom | Left */
+}</pre>
+            </div>
+
+            <div class="dica">
+                <strong>💡 Dica:</strong> Use padding para criar espaço interno e melhorar a legibilidade do conteúdo.
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO 5: COMPARAÇÃO ===== -->
+        <section class="section" id="comparacao">
+            <h2>5. Comparação: Margin vs Padding</h2>
+
+            <table>
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Margin</th>
+                    <th>Padding</th>
+                </tr>
+                <tr>
+                    <td><strong>Localização</strong></td>
+                    <td>Espaço EXTERNO (fora do elemento)</td>
+                    <td>Espaço INTERNO (dentro do elemento)</td>
+                </tr>
+                <tr>
+                    <td><strong>Afeta background?</strong></td>
+                    <td>Não (transparente)</td>
+                    <td>Sim (coberto pelo background)</td>
+                </tr>
+                <tr>
+                    <td><strong>Colapsa?</strong></td>
+                    <td>Sim (entre elementos)</td>
+                    <td>Não</td>
+                </tr>
+                <tr>
+                    <td><strong>Quando usar</strong></td>
+                    <td>Distância entre elementos</td>
+                    <td>Espaço do conteúdo da caixa</td>
+                </tr>
+            </table>
+
+            <h3>Exemplo Combinado:</h3>
+            <div class="demo-combined">
+                <div class="box-combined">
+                    <strong>Margin + Padding</strong><br>
+                    (margin: 15px, padding: 25px)
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO 6: EXEMPLO PRÁTICO ===== -->
+        <section class="section" id="exemplo-pratico">
+            <h2>6. Exemplo Prático: Cards</h2>
+            <p>Um exemplo real usando margin, padding e medidas relativas:</p>
+
+            <div class="card-container">
+                <div class="card" id="card-1">
+                    <div class="card-image">Imagem 1</div>
+                    <div class="card-content">
+                        <h3>Card com Padding</h3>
+                        <p>Este card usa padding de 20px no conteúdo e margin para espaçamento entre cards.</p>
+                        <button class="card-button">Saiba Mais</button>
+                    </div>
+                </div>
+
+                <div class="card" id="card-2">
+                    <div class="card-image">Imagem 2</div>
+                    <div class="card-content">
+                        <h3>Largura Responsiva</h3>
+                        <p>Os cards usam width com calc() e se adaptam ao tamanho da tela.</p>
+                        <button class="card-button">Saiba Mais</button>
+                    </div>
+                </div>
+
+                <div class="card" id="card-3">
+                    <div class="card-image">Imagem 3</div>
+                    <div class="card-content">
+                        <h3>Design Flexível</h3>
+                        <p>Layout criado com CSS Grid e medidas relativas para melhor adaptabilidade.</p>
+                        <button class="card-button">Saiba Mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <pre>.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 20px;
+}</pre>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO 7: BOX MODEL ===== -->
+        <section class="section" id="box-model">
+            <h2>7. Box Model (Modelo de Caixa)</h2>
+            <p>Todo elemento HTML é uma caixa, composta por:</p>
+
+            <div style="background-color: #ecf0f1; padding: 30px; border-radius: 8px; margin: 20px 0; text-align: center;">
+                <div style="background-color: #e8f4f8; padding: 5px; margin-bottom: 15px; font-size: 0.9em;">
+                    <strong>Content</strong> (Conteúdo)
+                </div>
+                <div style="background-color: #d1e7f0; padding: 5px; margin-bottom: 15px; font-size: 0.9em;">
+                    ↓ Padding (Espaço interno) ↓
+                </div>
+                <div style="background-color: #b3d9e6; padding: 5px; margin-bottom: 15px; font-size: 0.9em;">
+                    ↓ Border (Borda) ↓
+                </div>
+                <div style="background-color: #99d1e0; padding: 5px; font-size: 0.9em;">
+                    ↓ Margin (Espaço externo) ↓
+                </div>
+            </div>
+
+            <div class="code-example">
+                <pre>/* Box Model */
+Content → Padding → Border → Margin
+
+Exemplo:
+width: 200px           (largura do conteúdo)
+padding: 20px          (espaço interno)
+border: 2px solid      (borda)
+margin: 15px           (espaço externo)
+
+Largura TOTAL = 200 + (20×2) + (2×2) + (15×2) = 294px</pre>
+            </div>
+
+            <div class="dica">
+                <strong>💡 Dica:</strong> Use <code>box-sizing: border-box;</code> para facilitar cálculos de dimensão. Assim, padding e border não aumentam o tamanho final da caixa.
+            </div>
+        </section>
+
+        <!-- ===== RESUMO ===== -->
+        <section class="section" id="resumo">
+            <h2>📝 Resumo Rápido</h2>
+
+            <table>
+                <tr>
+                    <th>Conceito</th>
+                    <th>Exemplo</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td><strong>Medida Absoluta</strong></td>
+                    <td><code>width: 200px;</code></td>
+                    <td>Sempre 200 pixels, sem importar o contexto</td>
+                </tr>
+                <tr>
+                    <td><strong>Medida Relativa</strong></td>
+                    <td><code>width: 50%;</code></td>
+                    <td>Metade do tamanho do elemento pai</td>
+                </tr>
+                <tr>
+                    <td><strong>Margin</strong></td>
+                    <td><code>margin: 20px;</code></td>
+                    <td>Espaço externo de 20px em todos os lados</td>
+                </tr>
+                <tr>
+                    <td><strong>Padding</strong></td>
+                    <td><code>padding: 15px;</code></td>
+                    <td>Espaço interno de 15px em todos os lados</td>
+                </tr>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Aula de CSS: Medidas, Margin e Padding</p>
+        <p><a href="#topo" style="color: #3498db; text-decoration: none;">↑ Voltar ao topo</a></p>
+    </footer>
+
+</body>
+</html>
+
